@@ -20,6 +20,9 @@
       crossorigin="anonymous"
     />
 
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css"
+      rel="stylesheet">
+
     <!-- Slider comparaison -->
     <link rel="stylesheet" href="dist/css/before-after.min.css" />
     <script src="dist/js/before-after.min.js"></script>
@@ -44,16 +47,20 @@
     </div>
     <div class="container">
       <div class="row">
-        <div class="jumbotron">
-          <h1>A soumettre architecte - ABF !</h1>
+        <div class="col">
+          <div class="jumbotron">
+            <h1>A soumettre architecte - ABF !</h1>
+          </div>
         </div>
       </div>
-      <div class="row">
+      <div class="row text-center align-middle">
         <div class="col-6">
-          Bouton Jusqu'a Edicule
+          <input type="checkbox" checked data-toggle="toggle" data-on="Avec<br>Habillage Edicule" data-off="Sans<br>Habillage Edicule" data-onstyle="outline-primary"
+          data-offstyle="outline-secondary">
         </div>
         <div class="col-6">
-          Bouton avec Pergola
+          <input type="checkbox" checked data-toggle="toggle" data-on="Avec<br>Pergola" data-off="Sans<br>Pergola" data-onstyle="outline-primary"
+            data-offstyle="outline-secondary">
         </div>
       </div>
       <div class="row">
@@ -141,6 +148,8 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
