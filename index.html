@@ -55,11 +55,11 @@
       </div>
       <div class="row text-center align-middle">
         <div class="col-6">
-          <input type="checkbox" checked data-toggle="toggle" data-on="Avec" data-off="Sans" data-onstyle="outline-primary"
+          <input id="habillage" type="checkbox" checked data-toggle="toggle" data-on="Avec" data-off="Sans" data-onstyle="outline-primary"
           data-offstyle="outline-secondary"> Habillage Edicule
         </div>
         <div class="col-6">
-          <input type="checkbox" checked data-toggle="toggle" data-on="Avec" data-off="Sans" data-onstyle="outline-primary"
+          <input id="pergola" type="checkbox" checked data-toggle="toggle" data-on="Avec" data-off="Sans" data-onstyle="outline-primary"
             data-offstyle="outline-secondary"> Pergola
         </div>
       </div>
@@ -170,5 +170,26 @@
             );
         });
     </script>
+
+<script>
+  $(function () {
+    $('#habillage').change(function () {
+      //$('#console-event').html('Toggle: ' + $(this).prop('checked'))
+      console.log('pergola ' + document.getElementById('pergola').checked);
+      console.log('habillage ' + document.getElementById('habillage').checked);
+    })
+  });
+
+
+  $(function () {
+    $('#pergola').change(function () {
+      //$('#console-event').html('Toggle: ' + $(this).prop('checked'))
+      
+      console.log('pergola ' + document.getElementById('pergola').checked);
+      console.log('habillage ' + document.getElementById('habillage').checked);
+    })
+  });
+</script>
+
   </body>
 </html>
