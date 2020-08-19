@@ -103,7 +103,7 @@
             <div class="card-body text-center">
               <div id="place">
                 <img src="img/Face.jpg" alt="Before" />
-                <img src="img/Face-Mod.jpg" alt="After" />
+                <img id="placeAfter" src="img/Face-Mod.jpg" alt="After" />
               </div>
             </div>
           </div>
@@ -117,7 +117,11 @@
             <div class="card-body text-center">
               <div id="grandin">
                 <img src="img/Face-Loin.jpg" alt="Before" />
-                <img src="img/Face-Loin-Mod.jpg" alt="After" />
+                <img
+                  id="grandinAfter"
+                  src="img/Face-Loin-Mod.jpg"
+                  alt="After"
+                />
               </div>
             </div>
           </div>
@@ -131,7 +135,7 @@
             <div class="card-body text-center">
               <div id="collin">
                 <img src="img/Dos.jpg" alt="Before" />
-                <img id="collinBefore" src="img/Dos-Mod.jpg" alt="After" />
+                <img id="collinAfter" src="img/Dos-Mod.jpg" alt="After" />
               </div>
             </div>
           </div>
@@ -237,7 +241,11 @@
         } else if (isPergola) path = "Pergola";
         console.log(path);
 
-        $("#collinAfter").attr("src", "img_02.png");
+        $("#placeAfter").attr("src", "img/" + path + "/place.png");
+        $("#grandinAfter").attr("src", "img/" + path + "/grandin.png");
+        $("#collinAfter").attr("src", "img/" + path + "/collin.png");
+        $("#noeAfter").attr("src", "img/" + path + "/noe.png");
+        $("#wallaceAfter").attr("src", "img/" + path + "/wallace.png");
       }
 
       $(function () {
