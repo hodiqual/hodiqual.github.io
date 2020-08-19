@@ -55,8 +55,8 @@
       </div>
       <div class="row text-center align-middle">
         <div class="col-6">
-          <input id="habillage" type="checkbox" checked data-toggle="toggle" data-on="Avec" data-off="Sans" data-onstyle="outline-primary"
-          data-offstyle="outline-secondary"> Habillage Edicule
+          <input id="edicule" type="checkbox" checked data-toggle="toggle" data-on="Avec" data-off="Sans" data-onstyle="outline-primary"
+          data-offstyle="outline-secondary"> Habillage &eacutedicule ascenceur
         </div>
         <div class="col-6">
           <input id="pergola" type="checkbox" checked data-toggle="toggle" data-on="Avec" data-off="Sans" data-onstyle="outline-primary"
@@ -64,12 +64,12 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-12 col-lg-6">
+        <div class="col-12">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Face</h5>
+              <h5 class="card-title">De la place du th&eacute&acirctre</h5>
               <p class="card-text">
-            <div id="Face">
+            <div id="place">
                 <img src="img/Face.jpg" alt="Before" />
                 <img src="img/Face-Mod.jpg" alt="After" />
             </div>
@@ -77,11 +77,11 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-lg-6">
+        <div class="col-12">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Face Loin</h5>
-              <p class="card-text"><div id="Face-Loin">
+              <h5 class="card-title">De l'all&eacutee du th&eacute&acirctre</h5>
+              <p class="card-text"><div id="grandin">
                 <img src="img/Face-Loin.jpg" alt="Before" />
                 <img src="img/Face-Loin-Mod.jpg" alt="After" />
             </div>
@@ -91,21 +91,21 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-12 col-lg-6">
+        <div class="col-12">
           <div class="card">
-            <div class="card-body"><h5 class="card-title">Dos</h5>
+            <div class="card-body"><h5 class="card-title">De la rue Collin</h5>
             <p class="card-text">
-                <div id="Dos">
-                    <img src="img/Dos.jpg" alt="Before" />
+                <div id="dos">
+                    <img id="dosBefore" src="img/Dos.jpg" alt="Before" />
                     <img src="img/Dos-Mod.jpg" alt="After" />
                 </div>
             </div>
           </div>
         </div>
-        <div class="col-12 col-lg-6">
+        <div class="col-12">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Compare 4</h5>
+              <h5 class="card-title">Vue a&eacuterienne face nord</h5>
               <p class="card-text">
                 Photo de la rue + prise de vue
               </p>
@@ -117,7 +117,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Compare 5</h5>
+              <h5 class="card-title">Vue a&eacuterienne face sud</h5>
               <p class="card-text">
                 Photo de la Zac Du Theatre + prise de vue
               </p>
@@ -154,29 +154,29 @@
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         var beforeAfterExample = new BeforeAfter(
-          document.querySelector("#Face")
+          document.querySelector("#place")
         );
       });
 
     document.addEventListener("DOMContentLoaded", function () {
         var beforeAfterExample = new BeforeAfter(
-            document.querySelector("#Face-Loin")
+            document.querySelector("#grandin")
         );
     });
 
         document.addEventListener("DOMContentLoaded", function () {
             var beforeAfterExample = new BeforeAfter(
-                document.querySelector("#Dos")
+                document.querySelector("#dos")
             );
         });
     </script>
 
 <script>
   $(function () {
-    $('#habillage').change(function () {
+    $('#edicule').change(function () {
       //$('#console-event').html('Toggle: ' + $(this).prop('checked'))
       console.log('pergola ' + document.getElementById('pergola').checked);
-      console.log('habillage ' + document.getElementById('habillage').checked);
+      console.log('edicule ' + document.getElementById('edicule').checked);
     })
   });
 
@@ -184,9 +184,9 @@
   $(function () {
     $('#pergola').change(function () {
       //$('#console-event').html('Toggle: ' + $(this).prop('checked'))
-      
+      $('#dosBefore').attr("src", "img_02.png");
       console.log('pergola ' + document.getElementById('pergola').checked);
-      console.log('habillage ' + document.getElementById('habillage').checked);
+      console.log('edicule ' + document.getElementById('edicule').checked);
     })
   });
 </script>
