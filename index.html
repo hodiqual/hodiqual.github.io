@@ -129,9 +129,9 @@
           <div class="card mt-4">
             <h4 class="card-header">De la rue Collin</h4>
             <div class="card-body text-center">
-              <div id="dos">
-                <img id="dosBefore" src="img/Dos.jpg" alt="Before" />
-                <img src="img/Dos-Mod.jpg" alt="After" />
+              <div id="collin">
+                <img src="img/Dos.jpg" alt="Before" />
+                <img id="collinBefore" src="img/Dos-Mod.jpg" alt="After" />
               </div>
             </div>
           </div>
@@ -206,7 +206,7 @@
 
       document.addEventListener("DOMContentLoaded", function () {
         var beforeAfterExample = new BeforeAfter(
-          document.querySelector("#dos")
+          document.querySelector("#collin")
         );
       });
 
@@ -224,20 +224,33 @@
     </script>
 
     <script>
+      function majImage() {
+        console.log("majImage");
+        let isEdicule = document.getElementById("edicule").checked;
+        let isPergola = document.getElementById("pergola").checked;
+        console.log("pergola " + isPergola);
+        console.log("edicule " + isEdicule);
+        let path = "_";
+        if (isEdicule) {
+          path = "Edicule";
+          if (isPergola) path += "Pergola";
+        } else if (isPergola) path = "Pergola";
+        console.log(path);
+
+        $("#collinAfter").attr("src", "img_02.png");
+      }
+
       $(function () {
         $("#edicule").change(function () {
           //$('#console-event').html('Toggle: ' + $(this).prop('checked'))
-          console.log("pergola " + document.getElementById("pergola").checked);
-          console.log("edicule " + document.getElementById("edicule").checked);
+          majImage();
         });
       });
 
       $(function () {
         $("#pergola").change(function () {
           //$('#console-event').html('Toggle: ' + $(this).prop('checked'))
-          $("#dosBefore").attr("src", "img_02.png");
-          console.log("pergola " + document.getElementById("pergola").checked);
-          console.log("edicule " + document.getElementById("edicule").checked);
+          majImage();
         });
       });
     </script>
