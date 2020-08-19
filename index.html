@@ -20,8 +20,10 @@
       crossorigin="anonymous"
     />
 
-    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css"
-      rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css"
+      rel="stylesheet"
+    />
 
     <!-- Slider comparaison -->
     <link rel="stylesheet" href="dist/css/before-after.min.css" />
@@ -55,72 +57,97 @@
       </div>
       <div class="row text-center align-middle">
         <div class="col-6">
-          <input id="edicule" type="checkbox" checked data-toggle="toggle" data-on="Avec" data-off="Sans" data-onstyle="outline-primary"
-          data-offstyle="outline-secondary"> Habillage &eacutedicule ascenceur
+          <input
+            id="edicule"
+            type="checkbox"
+            checked
+            data-toggle="toggle"
+            data-on="Avec"
+            data-off="Sans"
+            data-onstyle="outline-primary"
+            data-offstyle="outline-secondary"
+          />
+          Habillage &eacutedicule ascenceur
         </div>
         <div class="col-6">
-          <input id="pergola" type="checkbox" checked data-toggle="toggle" data-on="Avec" data-off="Sans" data-onstyle="outline-primary"
-            data-offstyle="outline-secondary"> Pergola
+          <input
+            id="pergola"
+            type="checkbox"
+            checked
+            data-toggle="toggle"
+            data-on="Avec"
+            data-off="Sans"
+            data-onstyle="outline-primary"
+            data-offstyle="outline-secondary"
+          />
+          Pergola
         </div>
       </div>
       <div class="row">
         <div class="col-12">
           <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">De la place du th&eacute&acirctre</h5>
-              <p class="card-text">
-            <div id="place">
+            <h4 class="card-header">De la place du th&eacute&acirctre</h4>
+            <div class="card-body text-center">
+              <div id="place">
                 <img src="img/Face.jpg" alt="Before" />
                 <img src="img/Face-Mod.jpg" alt="After" />
-            </div>
-              </p>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+
+      <div class="row">
         <div class="col-12">
           <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">De l'all&eacutee du th&eacute&acirctre</h5>
-              <p class="card-text"><div id="grandin">
+            <h4 class="card-header">De l'all&eacutee du th&eacute&acirctre</h4>
+            <div class="card-body text-center">
+              <div id="grandin">
                 <img src="img/Face-Loin.jpg" alt="Before" />
                 <img src="img/Face-Loin-Mod.jpg" alt="After" />
-            </div>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <div class="card">
-            <div class="card-body"><h5 class="card-title">De la rue Collin</h5>
-            <p class="card-text">
-                <div id="dos">
-                    <img id="dosBefore" src="img/Dos.jpg" alt="Before" />
-                    <img src="img/Dos-Mod.jpg" alt="After" />
-                </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-12">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Vue a&eacuterienne face nord</h5>
-              <p class="card-text">
-                Photo de la rue + prise de vue
-              </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
       <div class="row">
         <div class="col-12">
           <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Vue a&eacuterienne face sud</h5>
-              <p class="card-text">
-                Photo de la Zac Du Theatre + prise de vue
-              </p>
+            <h4 class="card-header">De la rue Collin</h4>
+            <div class="card-body text-center">
+              <div id="dos">
+                <img id="dosBefore" src="img/Dos.jpg" alt="Before" />
+                <img src="img/Dos-Mod.jpg" alt="After" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <h4 class="card-header">Vue global face nord</h4>
+            <div class="card-body text-center">
+              <div id="noe">
+                <img src="img/Dos.jpg" alt="Before" />
+                <img id="noeAfter" src="img/Dos-Mod.jpg" alt="After" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <h4 class="card-header">Vue hauteur face sud</h4>
+            <div class="card-body text-center">
+              <div id="wallace">
+                <img src="img/Dos.jpg" alt="Before" />
+                <img id="noeAfter" src="img/Dos-Mod.jpg" alt="After" />
+              </div>
             </div>
           </div>
         </div>
@@ -158,38 +185,48 @@
         );
       });
 
-    document.addEventListener("DOMContentLoaded", function () {
+      document.addEventListener("DOMContentLoaded", function () {
         var beforeAfterExample = new BeforeAfter(
-            document.querySelector("#grandin")
+          document.querySelector("#grandin")
         );
-    });
+      });
 
-        document.addEventListener("DOMContentLoaded", function () {
-            var beforeAfterExample = new BeforeAfter(
-                document.querySelector("#dos")
-            );
-        });
+      document.addEventListener("DOMContentLoaded", function () {
+        var beforeAfterExample = new BeforeAfter(
+          document.querySelector("#dos")
+        );
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        var beforeAfterExample = new BeforeAfter(
+          document.querySelector("#noe")
+        );
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        var beforeAfterExample = new BeforeAfter(
+          document.querySelector("#wallace")
+        );
+      });
     </script>
 
-<script>
-  $(function () {
-    $('#edicule').change(function () {
-      //$('#console-event').html('Toggle: ' + $(this).prop('checked'))
-      console.log('pergola ' + document.getElementById('pergola').checked);
-      console.log('edicule ' + document.getElementById('edicule').checked);
-    })
-  });
+    <script>
+      $(function () {
+        $("#edicule").change(function () {
+          //$('#console-event').html('Toggle: ' + $(this).prop('checked'))
+          console.log("pergola " + document.getElementById("pergola").checked);
+          console.log("edicule " + document.getElementById("edicule").checked);
+        });
+      });
 
-
-  $(function () {
-    $('#pergola').change(function () {
-      //$('#console-event').html('Toggle: ' + $(this).prop('checked'))
-      $('#dosBefore').attr("src", "img_02.png");
-      console.log('pergola ' + document.getElementById('pergola').checked);
-      console.log('edicule ' + document.getElementById('edicule').checked);
-    })
-  });
-</script>
-
+      $(function () {
+        $("#pergola").change(function () {
+          //$('#console-event').html('Toggle: ' + $(this).prop('checked'))
+          $("#dosBefore").attr("src", "img_02.png");
+          console.log("pergola " + document.getElementById("pergola").checked);
+          console.log("edicule " + document.getElementById("edicule").checked);
+        });
+      });
+    </script>
   </body>
 </html>
