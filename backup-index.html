@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+    <!-- Required meta tags -->
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css"
+        rel="stylesheet" />
+
+    <script src="https://cdn.lr-ingest.io/LogRocket.min.js" crossorigin="anonymous"></script>
+    <script>window.LogRocket && window.LogRocket.init('79cjro/hodiqual');</script>
+
+    <!-- Slider comparaison -->
+    <link rel="stylesheet" href="dist/css/before-after.min.css" />
+    <script src="dist/js/before-after.min.js"></script>
+
+    <title>Projet Surélévation Rue Collin Puteaux</title>
+</head>
+
+<body>
+
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '183387673499143',
+                cookie: true,
+                xfbml: true,
+                version: 'v9.0'
+            });
+
+            FB.AppEvents.logPageView();
+
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <div class="bg-dark">
+        <div class="container">
+            <div class="row">
+                <nav class="col navbar navbar-expand navbar-dark">
+                    <!--navbar-dark-->
+                    <img src="img/logo.svg" width="40" height="30" />
+                    <a class="navbar-brand" href="index2.html"> PROJET SURELEVATION</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="jumbotron py-3">
+                    <h3>13 RUE COLLIN PUTEAUX</h3>
+                    <hr class="my-4" />
+                    <h5>BELORGEY Laurence / HODIQUET Alexis</h5>
+                    <hr class="my-4" />
+                    <img src="img/gabarit.png" class="img-fluid rounded mx-auto d-block" alt="gabarit" />
+                </div>
+            </div>
+        </div>
+        <div class="row text-center align-middle my-2 sticky-top">
+            <div class="col-6">
+                <div class="card text-center bg-transparent" style="border: none;">
+                    <div class="card-body">
+                        <h5 class="card-text">
+                            Habillage &eacutedicule ascenceur
+                        </h5>
+                        <input id="edicule" type="checkbox" checked data-toggle="toggle" data-on="Avec" data-off="Sans"
+                            data-onstyle="outline-primary" data-offstyle="outline-secondary" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card text-center bg-transparent" style="border: none;">
+                    <div class="card-body">
+                        <h5 class="card-text">
+                            Pergola
+                        </h5>
+                        <input id="pergola" type="checkbox" checked data-toggle="toggle" data-on="Avec" data-off="Sans"
+                            data-onstyle="outline-primary" data-offstyle="outline-secondary" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card mt-2">
+                    <h4 class="card-header">
+                        De la place du th&eacute&acirctre
+                    </h4>
+                    <h6 class="card-subtitle m-2 text-muted">
+                        D&eacuteplacez le curseur vers la gauche
+                    </h6>
+                    <div class="card-body text-center">
+                        <div id="place">
+                            <img src="img/original/place.png" alt="Before" />
+                            <img id="placeAfter" src="img/EdiculePergola/place.png" alt="After" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card mt-4">
+                    <h4 class="card-header">De l'all&eacutee du th&eacute&acirctre</h4>
+                    <h6 class="card-subtitle m-2 text-muted">
+                        D&eacuteplacez le curseur vers la gauche
+                    </h6>
+                    <div class="card-body text-center">
+                        <div id="grandin">
+                            <img src="img/original/grandin.png" alt="Before" />
+                            <img id="grandinAfter" src="img/EdiculePergola/grandin.png" alt="After" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card mt-4">
+                    <h4 class="card-header">De la rue Collin</h4>
+                    <h6 class="card-subtitle m-2 text-muted">
+                        D&eacuteplacez le curseur vers la droite
+                    </h6>
+                    <div class="card-body text-center">
+                        <div id="collin">
+                            <img src="img/original/collin.png" alt="Before" />
+                            <img id="collinAfter" src="img/EdiculePergola/collin.png" alt="After" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card mt-4">
+                    <h4 class="card-header">Vue globale face nord</h4>
+                    <h6 class="card-subtitle m-2 text-muted">
+                        D&eacuteplacez le curseur
+                    </h6>
+                    <div class="card-body text-center">
+                        <div id="noe">
+                            <img src="img/original/noe.png" alt="Before" />
+                            <img id="noeAfter" src="img/EdiculePergola/noe.png" alt="After" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card mt-4">
+                    <h4 class="card-header">Vue hauteur face sud</h4>
+                    <h6 class="card-subtitle m-2 text-muted">
+                        D&eacuteplacez le curseur
+                    </h6>
+                    <div class="card-body text-center">
+                        <div id="wallace">
+                            <img src="img/original/wallace.png" alt="Before" />
+                            <img id="wallaceAfter" src="img/EdiculePergola/wallace.png" alt="After" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div id="accordion">
+                    <div class="card mt-4">
+                        <div class="card-header text-center id=" headingThree">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse"
+                                    data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Ici des exemples &quot;fa&ccedil;ade cr&eacute;pi&quot;
+                                </button>
+                            </h2>
+                        </div>
+                        <h6 class="card-subtitle m-2 text-center text-muted">
+                            Les boutons Habillage et Pergola sont inactifs pour cette
+                            partie.
+                        </h6>
+                        <div id="collapseThree" class="collapse show" aria-labelledby="headingThree"
+                            data-parent="#accordion">
+                            <div class="card-body text-center">
+                                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"
+                                    data-interval="3000">
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">
+                                        </li>
+                                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                    </ol>
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img class="d-block w-100" src="img/Edicule/place_blanc.png"
+                                                alt="First slide" />
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img class="d-block w-100" src="img/Edicule/grandin_blanc.png"
+                                                alt="Second slide" />
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img class="d-block w-100" src="img/EdiculePergola/place_blanc.png"
+                                                alt="Third slide" />
+                                        </div>
+                                    </div>
+                                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                                        data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                                        data-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var beforeAfterExample = new BeforeAfter(
+                document.querySelector("#place")
+            );
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var beforeAfterExample = new BeforeAfter(
+                document.querySelector("#grandin")
+            );
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var beforeAfterExample = new BeforeAfter(
+                document.querySelector("#collin")
+            );
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var beforeAfterExample = new BeforeAfter(
+                document.querySelector("#noe")
+            );
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var beforeAfterExample = new BeforeAfter(
+                document.querySelector("#wallace")
+            );
+        });
+    </script>
+
+    <script>
+        function majImage() {
+            console.log("majImage");
+            let isEdicule = document.getElementById("edicule").checked;
+            let isPergola = document.getElementById("pergola").checked;
+            console.log("pergola " + isPergola);
+            console.log("edicule " + isEdicule);
+            let path = "Rien";
+            if (isEdicule) {
+                path = "Edicule";
+                if (isPergola) path += "Pergola";
+            } else if (isPergola) path = "Pergola";
+            console.log(path);
+
+            $("#placeAfter").attr("src", "img/" + path + "/place.png");
+            $("#grandinAfter").attr("src", "img/" + path + "/grandin.png");
+            $("#collinAfter").attr("src", "img/" + path + "/collin.png");
+            $("#noeAfter").attr("src", "img/" + path + "/noe.png");
+            $("#wallaceAfter").attr("src", "img/" + path + "/wallace.png");
+        }
+
+        $(function () {
+            $("#edicule").change(function () {
+                //$('#console-event').html('Toggle: ' + $(this).prop('checked'))
+                majImage();
+            });
+        });
+
+        $(function () {
+            $("#pergola").change(function () {
+                //$('#console-event').html('Toggle: ' + $(this).prop('checked'))
+                majImage();
+            });
+        });
+    </script>
+</body>
+
+</html>
