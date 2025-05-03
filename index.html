@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Video Alexis</title>
+  <title>Recrutement en masse de Velociste - 3 min</title>
   <link href="https://vjs.zencdn.net/8.5.2/video-js.css" rel="stylesheet" />
   <style>
     body {
@@ -17,10 +17,16 @@
       justify-content: flex-start;
       min-height: 100vh;
     }
-    h1 {
-      margin-top: 1em;
-      font-size: 1.5em;
+    header {
+      padding: 1em;
+      background: #333;
+      color: white;
+      width: 100%;
       text-align: center;
+    }
+    h1 {
+      margin: 0;
+      font-size: 1.2em;
     }
     video {
       width: 100%;
@@ -30,10 +36,42 @@
       border-radius: 12px;
       box-shadow: 0 0 15px rgba(0,0,0,0.2);
     }
+    .copy-section {
+      margin: 1em;
+      max-width: 420px;
+      background: white;
+      padding: 1em;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .copy-section p {
+      margin: 0 0 0.5em;
+      font-weight: bold;
+    }
+    .copy-button {
+      display: inline-flex;
+      align-items: center;
+      background: #007bff;
+      color: white;
+      padding: 0.5em 1em;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .copy-button svg {
+      margin-right: 0.5em;
+    }
+    .message {
+      margin-top: 0.5em;
+      color: green;
+      font-size: 0.9em;
+    }
   </style>
 </head>
 <body>
-  <h1>Vidéo auto-hébergée</h1>
+  <header>
+    <h1>Recrutement en masse de Velociste - 3 min</h1>
+  </header>
 
   <video
     id="ma-video"
@@ -47,7 +85,46 @@
     Votre navigateur ne prend pas en charge la vidéo HTML5.
   </video>
 
+  <div class="copy-section">
+    <p>1 - Copie le texte ici :</p>
+    <button class="copy-button" onclick="copierTexte()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M10 1.5v1H5v10h6v-3h1v4H4v-12h6v1h1v-1a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1v-4h-1z"/>
+        <path d="M12.5 2a.5.5 0 0 1 .5.5V8h-1V3H8V2h4.5z"/>
+      </svg>
+      Copier le texte
+    </button>
+    <div id="message" class="message"></div>
+  </div>
+
+  <script>
+    function copierTexte() {
+      const texte = `C'EST PARTI  🏁! Aidez nous à relever un défi collectif immense : rouler 40 000 km, ensemble, entre le 1er et le 31 mai 🌍🚴
+
+Vous vous en sentez capable ?
+
+Vous, seul, pas sûr, mais quand on additionne tout ce que nos cyclistes engagés sont prêts à rouler chacun de leur côté, alors on peut tout envisager !
+
+Et on va avoir besoin de vous, parce que 40 000 kilomètres, c'est ce que notre communauté Geovelo roule aujourd'hui en un an fois 400% 😅
+
+Est-ce qu'on n’aurait finalement pas trouvé le meilleur prétexte pour vous remettre en selle ? Parce qu'au delà des enjeux climatiques, le vélo c'est bon pour vous !
+
+Rien de plus simple :
+1⃣ Téléchargez l'application Geovelo et créez un compte gratuitement.
+2⃣ Rejoignez la communauté Team for the Planet avec le code EEUEWQB ou via ce lien : https://geovelo.app/communities/invites/EEUEWQB
+3⃣ Enfourchez votre vélo et lancez l'application en début et fin de course (possibilité de passer en "mode automatique").
+
+Alors à partir d'aujourd'hui, chaque coup de pédale compte !
+
+Merci à "mai à vélo" de nous inspirer 💙`;
+      navigator.clipboard.writeText(texte).then(function() {
+        document.getElementById("message").textContent = "Texte copié dans le presse-papier ✔";
+      }, function(err) {
+        document.getElementById("message").textContent = "Erreur lors de la copie : " + err;
+      });
+    }
+  </script>
+
   <script src="https://vjs.zencdn.net/8.5.2/video.min.js"></script>
 </body>
 </html>
-
