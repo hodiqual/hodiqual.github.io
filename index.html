@@ -18,13 +18,24 @@
       overflow: hidden;
     }
 
-    .reveal .background-video {
-      position: absolute;
+    /* Arrière-plan vidéo fixé et centré */
+    .video-background {
+      position: fixed;
       top: 0; left: 0;
-      width: 100%;
-      height: 100%;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .video-background video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      transform: translate(-50%, -50%);
       object-fit: cover;
-      z-index: -1;
     }
 
     .copy-button-container {
@@ -44,7 +55,6 @@
       cursor: pointer;
     }
 
-    /* Texte masqué */
     #texte-facebook {
       display: none;
     }
@@ -52,23 +62,25 @@
 </head>
 <body>
 
-<!-- Vidéo de fond -->
-<video class="background-video" autoplay muted loop playsinline>
-  <source src="velo-paris.mp4" type="video/mp4">
-  Votre navigateur ne supporte pas la lecture vidéo HTML5.
-</video>
+<!-- Conteneur vidéo en arrière-plan -->
+<div class="video-background">
+  <video autoplay muted loop playsinline>
+    <source src="velo-paris.mp4" type="video/mp4">
+    Votre navigateur ne supporte pas la lecture vidéo HTML5.
+  </video>
+</div>
 
-<!-- Révélation -->
+<!-- Reveal.js -->
 <div class="reveal">
   <div class="slides">
     <section>
 
-      <!-- Bouton positionné dans le 1er quart de l'écran -->
+      <!-- Bouton -->
       <div class="copy-button-container">
         <button onclick="copyToClipboard()">📋 Copier le texte</button>
       </div>
 
-      <!-- Texte masqué mais copiable -->
+      <!-- Texte caché -->
       <pre><code id="texte-facebook">
 C'EST PARTI 🏁! Aidez nous à relever un défi collectif immense : rouler 40 000 km, ensemble,
 entre le 1er et le 31 mai 🌍🚴
@@ -87,32 +99,4 @@ Parce qu'au-delà des enjeux climatiques, le vélo c'est bon pour vous !
 Rien de plus simple :
 1⃣ Téléchargez l'application Geovelo et créez un compte gratuitement.
 2⃣ Rejoignez la communauté Team for the Planet avec le code EEUEWQB ou via ce lien :
-https://geovelo.app/communities/invites/EEUEWQB
-3⃣ Enfourchez votre vélo et lancez l'application en début et fin de course (possibilité de passer en
-"mode automatique").
-
-Alors à partir d'aujourd'hui, chaque coup de pédale compte !
-
-Merci à "mai à vélo" de nous inspirer 💙
-
-Images : https://drive.google.com/drive/folders/1FE_VBZPQWSurcPjFsl9qgjwxuZzSx-cU?usp=drive_link
-Texte : https://lnkd.in/ewFPuAmM
-      </code></pre>
-
-    </section>
-  </div>
-</div>
-
-<script>
-  Reveal.initialize();
-
-  function copyToClipboard() {
-    const texte = document.getElementById("texte-facebook").innerText;
-    navigator.clipboard.writeText(texte)
-      .then(() => alert("Texte copié dans le presse-papiers ✅"))
-      .catch(err => alert("Erreur de copie : " + err));
-  }
-</script>
-
-</body>
-</html>
+https
