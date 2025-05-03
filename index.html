@@ -53,6 +53,21 @@
             padding: 20px;
             display: none;
         }
+
+        /* Style for the download link (to make it look like a button) */
+        #download-image-button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
     </style>
 </head>
 
@@ -62,19 +77,15 @@
             <section>
                 <h1>Recrue Velociste sur les groupes Facebook de ta ville</h1>
                 <div class="button-container">
-                    <button onclick="saveImage()">Enregistrer l'image</button>
+                    <a id="download-image-button" href="Image-Facebook.jpeg" download>Enregistrer l'image</a>
                     <button onclick="copyText()">Copier le texte</button>
                 </div>
-                <img src="Galaxie-TFTP-velo.png" alt="TFTP Logo" class="tftp-logo">
+                <img src="tftp-logo.png" alt="TFTP Logo" class="tftp-logo">
                 <p style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);">Mini
                     Tuto Slide suivante</p>
                 <div id="copy-confirmation">Texte copié dans le presse-papier!</div>
 
                 <script>
-                    function saveImage() {
-                        alert("Fonctionnalité non implémentée dans un navigateur. Vous devrez télécharger l'image manuellement.");
-                    }
-
                     function copyText() {
                         const textToCopy = `C'EST PARTI
 
@@ -101,7 +112,7 @@ https://geovelo.app/communities/invites/EEUEWQB
 "mode automatique").
 Alors à partir d'aujourd'hui, chaque coup de pédale compte!
 
-Merci à "mai à vélo" de nous inspirer`; // [cite: 1, 2, 3, 4, 5, 6, 7]
+Merci à "mai à vélo" de nous inspirer`; //
 
                         navigator.clipboard.writeText(textToCopy)
                             .then(() => {
