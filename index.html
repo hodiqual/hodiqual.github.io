@@ -4,31 +4,47 @@
   <meta charset="utf-8">
   <title>Challenge Mai à Vélo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <!-- Reveal.js -->
   <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
   <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/white.css" id="theme">
   <script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
 
   <style>
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      margin-bottom: 20px;
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .reveal .background-video {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .copy-button-container {
+      position: absolute;
+      top: 10%;
+      width: 100%;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .copy-button-container button {
+      padding: 12px 24px;
+      font-size: 18px;
+      background-color: rgba(255, 255, 255, 0.85);
+      border: none;
+      border-radius: 6px;
       cursor: pointer;
     }
-    pre {
-      white-space: pre-wrap;
-      background: #f4f4f4;
-      padding: 15px;
-      border-radius: 8px;
-    }
-    video {
-      width: 100%;
-      max-width: 640px;
-      margin-top: 20px;
-      border-radius: 12px;
-    }
+
+    /* Texte masqué */
     #texte-facebook {
       display: none;
     }
@@ -36,16 +52,27 @@
 </head>
 <body>
 
+<!-- Vidéo de fond -->
+<video class="background-video" autoplay muted loop playsinline>
+  <source src="velo-paris.mp4" type="video/mp4">
+  Votre navigateur ne supporte pas la lecture vidéo HTML5.
+</video>
+
+<!-- Révélation -->
 <div class="reveal">
   <div class="slides">
-
     <section>
-      <button onclick="copyToClipboard()">📋 Copier le texte</button>
 
+      <!-- Bouton positionné dans le 1er quart de l'écran -->
+      <div class="copy-button-container">
+        <button onclick="copyToClipboard()">📋 Copier le texte</button>
+      </div>
+
+      <!-- Texte masqué mais copiable -->
       <pre><code id="texte-facebook">
 C'EST PARTI 🏁! Aidez nous à relever un défi collectif immense : rouler 40 000 km, ensemble,
 entre le 1er et le 31 mai 🌍🚴
-        
+
 Vous vous en sentez capable ?
 
 Vous, seul, pas sûr, mais quand on additionne tout ce que nos cyclistes engagés sont prêts à
@@ -65,16 +92,14 @@ https://geovelo.app/communities/invites/EEUEWQB
 "mode automatique").
 
 Alors à partir d'aujourd'hui, chaque coup de pédale compte !
+
 Merci à "mai à vélo" de nous inspirer 💙
 
+Images : https://drive.google.com/drive/folders/1FE_VBZPQWSurcPjFsl9qgjwxuZzSx-cU?usp=drive_link
+Texte : https://lnkd.in/ewFPuAmM
       </code></pre>
 
-      <video controls>
-        <source src="velo-paris.mp4" type="video/mp4">
-        Votre navigateur ne supporte pas la lecture vidéo HTML5.
-      </video>
     </section>
-
   </div>
 </div>
 
