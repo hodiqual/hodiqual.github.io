@@ -1,150 +1,132 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html lang="fr">
 <head>
-    <meta charset="utf-8">
-    <title>Recrue Velociste sur les groupes Facebook de ta ville</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="dist/reveal.css">
-    <link rel="stylesheet" href="dist/theme/black.css">
-    <style>
-        .reveal .controls {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            bottom: auto;
-            left: auto;
-            z-index: 100;
-        }
+  <meta charset="utf-8">
+  <title>Recrue Velociste</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.2/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.2/dist/theme/white.css" id="theme">
+  <style>
+    .reveal .slides {
+      background-image: url('Galaxie-TFTP-velo.png');
+      background-repeat: repeat;
+      background-size: 100px 100px;
+    }
 
-        .reveal .controls .navigate-left,
-        .reveal .controls .navigate-up {
-            display: none !important;
-        }
+    .slide1 {
+      padding-top: 100px;
+      text-align: center;
+    }
 
-        .tftp-logo {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            width: 150px;
-            /* Ajustez la taille selon vos besoins */
-        }
+    .slide1 img {
+      width: 100%;
+      height: auto;
+      margin: 20px 0;
+    }
 
-        .button-container {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-        }
+    .copy-button {
+      padding: 10px 20px;
+      background-color: #0088cc;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
 
-        .button-container button {
-            margin-right: 10px;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
+    .notification {
+      margin-top: 10px;
+      color: green;
+      font-weight: bold;
+      display: none;
+    }
 
-        /* Style for the copy confirmation message */
-        #copy-confirmation {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: white;
-            border: 1px solid black;
-            padding: 20px;
-            display: none;
-        }
+    .hidden-text {
+      position: absolute;
+      left: -9999px;
+    }
 
-        /* Style for the download link (to make it look like a button) */
-        #download-image-button {
-            background-color: #4CAF50;
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-    </style>
+    .video-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .reveal .controls {
+      top: 10px !important;
+    }
+  </style>
 </head>
-
 <body>
-    <div class="reveal">
-        <div class="slides">
-            <section>
-                <h1>Recrue Velociste sur les groupes Facebook de ta ville</h1>
-                <div class="button-container">
-                    <a id="download-image-button" href="Image-Facebook.jpeg" download>Enregistrer l'image</a>
-                    <button onclick="copyText()">Copier le texte</button>
-                </div>
-                <img src="tftp-logo.png" alt="TFTP Logo" class="tftp-logo">
-                <p style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);">Mini
-                    Tuto Slide suivante</p>
-                <div id="copy-confirmation">Texte copié dans le presse-papier!</div>
 
-                <script>
-                    function copyText() {
-                        const textToCopy = `C'EST PARTI
+<div class="reveal">
+  <div class="slides">
 
-! Aidez nous à relever un défi collectif immense: rouler 40 000 km, ensemble,
+    <!-- Slide 1 -->
+    <section class="slide1">
+      <h2>Recrue Velociste sur les groupes Facebook de ta ville</h2>
+      <p>1 - Appuies longtemps sur l'image👇  et choisis l'option pour l'enregistrer dans ton album/galerie</p>
+      <img src="Image-Facebook.jpeg" alt="Image à partager">
+      
+      <button class="copy-button" onclick="copyText()">2 - Copies le texte en appuyant ici</button>
+      <div class="notification" id="notification">Texte copié dans le presse-papier ✅</div>
 
-entre le 1er et le 31 mai
+      <div class="hidden-text" id="hidden-text">
+        C'EST PARTI 🏁! Aidez nous à relever un défi collectif immense : rouler 40 000 km, ensemble, entre le 1er et le 31 mai 🌍🚴
 
-Vous vous en sentez capable?
-Vous, seul, pas sûr, mais quand on additionne tout ce que nos cyclistes engagés sont prêts à
-rouler chacun de leur côté, alors on peut tout envisager!
-Et on va avoir besoin de vous, parce que 40 000 kilomètres, c'est ce que notre communauté
-Geovelo roule aujourd'hui en un an fois 400%
+        Vous vous en sentez capable ?
 
-Est-ce qu'on n'aurait finalement pas trouvé le meilleur prétexte pour vous remettre en selle?
-Parce qu'au delà des enjeux climatiques, le vélo c'est bon pour vous !
-Rien de plus simple:
+        Vous, seul, pas sûr, mais quand on additionne tout ce que nos cyclistes engagés sont prêts à rouler chacun de leur côté, alors on peut tout envisager !
 
-1 Téléchargez l'application Geovelo et créez un compte gratuitement.
-2 Rejoignez la communauté Team for the Planet avec le code EEUEWQB ou via ce lien :
+        Et on va avoir besoin de vous, parce que 40 000 kilomètres, c'est ce que notre communauté Geovelo roule aujourd'hui en un an fois 400% 😅
 
-https://geovelo.app/communities/invites/EEUEWQB
+        Est-ce qu'on n’aurait finalement pas trouvé le meilleur prétexte pour vous remettre en selle ? Parce qu'au delà des enjeux climatiques, le vélo c'est bon pour vous !
 
-3 Enfourchez votre vélo et lancez l'application en début et fin de course (possibilité de passer en
-"mode automatique").
-Alors à partir d'aujourd'hui, chaque coup de pédale compte!
+        Rien de plus simple :
+        1⃣ Téléchargez l'application Geovelo et créez un compte gratuitement.
+        2⃣ Rejoignez la communauté Team for the Planet avec le code EEUEWQB ou via ce lien : https://geovelo.app/communities/invites/EEUEWQB
+        3⃣ Enfourchez votre vélo et lancez l'application en début et fin de course (possibilité de passer en "mode automatique").
 
-Merci à "mai à vélo" de nous inspirer`; //
+        Alors à partir d'aujourd'hui, chaque coup de pédale compte !
 
-                        navigator.clipboard.writeText(textToCopy)
-                            .then(() => {
-                                const confirmation = document.getElementById('copy-confirmation');
-                                confirmation.style.display = 'block';
-                                setTimeout(() => {
-                                    confirmation.style.display = 'none';
-                                }, 3000); // Affiche la confirmation pendant 3 secondes
-                            })
-                            .catch(err => {
-                                console.error('Erreur lors de la copie du texte: ', err);
-                                alert('Impossible de copier le texte dans le presse-papier.');
-                            });
-                    }
-                </script>
+        Merci à "mai à vélo" de nous inspirer 💙  
+      </div>
 
-            </section>
+      <p>3 - Ready ? Partages sur WhatsApp ou les groupes Facebook de ta ville</p>
+      <p>Une vidéo explicative dans la slide suivante</p>
+    </section>
 
-            <section data-background-video="velo-paris.mp4" data-background-video-loop data-background-video-muted>
-                <h2>Deuxième Slide</h2>
-                <p>Vidéo en background</p>
-            </section>
+    <!-- Slide 2 -->
+    <section>
+      <video class="video-background" autoplay muted loop playsinline>
+        <source src="velo-paris.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas la vidéo HTML5.
+      </video>
+    </section>
 
-        </div>
-    </div>
+  </div>
+</div>
 
-    <script src="dist/reveal.js"></script>
-    <script>
-        Reveal.initialize({
-            hash: true
-        });
-    </script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.2/dist/reveal.min.js"></script>
+<script>
+  Reveal.initialize({
+    controls: true,
+    progress: false,
+    center: true,
+    hash: true
+  });
+
+  function copyText() {
+    const text = document.getElementById("hidden-text").innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      document.getElementById("notification").style.display = "block";
+    });
+  }
+</script>
+
 </body>
-
 </html>
