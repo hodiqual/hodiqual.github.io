@@ -51,9 +51,12 @@
       display: none;
     }
 
-    .hidden-text {
+    textarea.hidden-text {
       position: absolute;
       left: -9999px;
+      height: 0;
+      width: 0;
+      overflow: hidden;
     }
 
     .video-container {
@@ -70,10 +73,6 @@
       max-height: 100%;
       width: auto;
       height: auto;
-    }
-
-    .reveal .controls {
-      top: 10px !important;
     }
   </style>
 </head>
@@ -97,8 +96,9 @@
         <div class="notification" id="notification">Texte copié dans le presse-papier ✅</div>
       </div>
 
-      <div class="hidden-text" id="hidden-text">
+      <textarea id="texte-facebook" class="hidden-text">
 C'EST PARTI 🏁! Aidez nous à relever un défi collectif immense : rouler 40 000 km, ensemble, entre le 1er et le 31 mai 🌍🚴
+
 Vous vous en sentez capable ?
 
 Vous, seul, pas sûr, mais quand on additionne tout ce que nos cyclistes engagés sont prêts à rouler chacun de leur côté, alors on peut tout envisager !
@@ -115,7 +115,7 @@ Rien de plus simple :
 Alors à partir d'aujourd'hui, chaque coup de pédale compte !
 
 Merci à "mai à vélo" de nous inspirer 💙  
-      </div>
+      </textarea>
 
       <div class="content-box">
         <p>3 - Prêt ? Partages sur <a href="https://wa.me/" target="_blank">WhatsApp</a> ou les <a href="fb://facewebmodal/" target="_blank">groupes Facebook</a> de ta ville</p>
@@ -148,7 +148,7 @@ Merci à "mai à vélo" de nous inspirer 💙
   });
 
   function copyText() {
-    const text = document.getElementById("hidden-text").innerText;
+    const text = document.getElementById("texte-facebook").value;
     navigator.clipboard.writeText(text).then(() => {
       document.getElementById("notification").style.display = "block";
     });
