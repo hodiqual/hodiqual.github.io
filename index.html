@@ -18,19 +18,20 @@
       text-align: center;
     }
 
-    .content-box {
-      background-color: rgba(0, 0, 0, 0.85);
-      color: white;
-      padding: 20px;
-      margin: 20px auto;
-      max-width: 800px;
-      border-radius: 8px;
-    }
-
     .slide1 img {
       width: 100%;
       height: auto;
       margin: 20px 0;
+    }
+
+    .content-box {
+      background-color: rgba(0, 0, 0, 0.85);
+      color: white;
+      margin: 10px auto;
+      padding: 20px;
+      width: 90%;
+      border-radius: 10px;
+      max-width: 800px;
     }
 
     .copy-button {
@@ -56,20 +57,19 @@
     }
 
     .video-container {
-      position: relative;
-      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
       height: 100vh;
-      overflow: hidden;
+      background-color: black;
     }
 
     .video-container video {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      min-width: 100%;
-      min-height: 100%;
-      object-fit: cover;
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
     }
 
     .reveal .controls {
@@ -87,11 +87,10 @@
       <div class="content-box">
         <h2>Recrue Velociste sur les groupes Facebook de ta ville</h2>
       </div>
-
       <div class="content-box">
         <p>1 - Appuies longtemps sur l'image👇  et choisis l'option pour l'enregistrer dans ton album/galerie</p>
-        <img src="Image-Facebook.jpeg" alt="Image à partager">
       </div>
+      <img src="Image-Facebook.jpeg" alt="Image à partager">
 
       <div class="content-box">
         <button class="copy-button" onclick="copyText()">2 - Copies le texte en appuyant ici</button>
@@ -121,6 +120,8 @@
 
       <div class="content-box">
         <p>3 - Ready ? Partages sur WhatsApp ou les groupes Facebook de ta ville</p>
+      </div>
+      <div class="content-box">
         <p>Une vidéo explicative dans la slide suivante</p>
       </div>
     </section>
@@ -128,7 +129,7 @@
     <!-- Slide 2 -->
     <section>
       <div class="video-container">
-        <video autoplay muted loop playsinline>
+        <video autoplay loop controls playsinline>
           <source src="velo-paris.mp4" type="video/mp4">
           Votre navigateur ne supporte pas la vidéo HTML5.
         </video>
@@ -150,11 +151,7 @@
   function copyText() {
     const text = document.getElementById("hidden-text").innerText;
     navigator.clipboard.writeText(text).then(() => {
-      const notification = document.getElementById("notification");
-      notification.style.display = "block";
-      setTimeout(() => {
-        notification.style.display = "none";
-      }, 3000);
+      document.getElementById("notification").style.display = "block";
     });
   }
 </script>
