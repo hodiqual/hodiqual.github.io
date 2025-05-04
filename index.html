@@ -18,6 +18,15 @@
       text-align: center;
     }
 
+    .content-box {
+      background-color: rgba(0, 0, 0, 0.85);
+      color: white;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 800px;
+      border-radius: 8px;
+    }
+
     .slide1 img {
       width: 100%;
       height: auto;
@@ -36,7 +45,7 @@
 
     .notification {
       margin-top: 10px;
-      color: green;
+      color: lightgreen;
       font-weight: bold;
       display: none;
     }
@@ -46,14 +55,21 @@
       left: -9999px;
     }
 
-    .video-background {
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .video-container video {
       position: absolute;
-      top: 0;
-      left: 0;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       min-width: 100%;
       min-height: 100%;
       object-fit: cover;
-      z-index: -1;
     }
 
     .reveal .controls {
@@ -68,12 +84,19 @@
 
     <!-- Slide 1 -->
     <section class="slide1">
-      <h2>Recrue Velociste sur les groupes Facebook de ta ville</h2>
-      <p>1 - Appuies longtemps sur l'image👇  et choisis l'option pour l'enregistrer dans ton album/galerie</p>
-      <img src="Image-Facebook.jpeg" alt="Image à partager">
-      
-      <button class="copy-button" onclick="copyText()">2 - Copies le texte en appuyant ici</button>
-      <div class="notification" id="notification">Texte copié dans le presse-papier ✅</div>
+      <div class="content-box">
+        <h2>Recrue Velociste sur les groupes Facebook de ta ville</h2>
+      </div>
+
+      <div class="content-box">
+        <p>1 - Appuies longtemps sur l'image👇  et choisis l'option pour l'enregistrer dans ton album/galerie</p>
+        <img src="Image-Facebook.jpeg" alt="Image à partager">
+      </div>
+
+      <div class="content-box">
+        <button class="copy-button" onclick="copyText()">2 - Copies le texte en appuyant ici</button>
+        <div class="notification" id="notification">Texte copié dans le presse-papier ✅</div>
+      </div>
 
       <div class="hidden-text" id="hidden-text">
         C'EST PARTI 🏁! Aidez nous à relever un défi collectif immense : rouler 40 000 km, ensemble, entre le 1er et le 31 mai 🌍🚴
@@ -96,16 +119,20 @@
         Merci à "mai à vélo" de nous inspirer 💙  
       </div>
 
-      <p>3 - Ready ? Partages sur WhatsApp ou les groupes Facebook de ta ville</p>
-      <p>Une vidéo explicative dans la slide suivante</p>
+      <div class="content-box">
+        <p>3 - Ready ? Partages sur WhatsApp ou les groupes Facebook de ta ville</p>
+        <p>Une vidéo explicative dans la slide suivante</p>
+      </div>
     </section>
 
     <!-- Slide 2 -->
     <section>
-      <video class="video-background" autoplay muted loop playsinline>
-        <source src="velo-paris.mp4" type="video/mp4">
-        Votre navigateur ne supporte pas la vidéo HTML5.
-      </video>
+      <div class="video-container">
+        <video autoplay muted loop playsinline>
+          <source src="velo-paris.mp4" type="video/mp4">
+          Votre navigateur ne supporte pas la vidéo HTML5.
+        </video>
+      </div>
     </section>
 
   </div>
@@ -123,7 +150,11 @@
   function copyText() {
     const text = document.getElementById("hidden-text").innerText;
     navigator.clipboard.writeText(text).then(() => {
-      document.getElementById("notification").style.display = "block";
+      const notification = document.getElementById("notification");
+      notification.style.display = "block";
+      setTimeout(() => {
+        notification.style.display = "none";
+      }, 3000);
     });
   }
 </script>
