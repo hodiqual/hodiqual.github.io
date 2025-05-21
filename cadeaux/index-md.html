@@ -1,1 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Ma présentation Reveal.js</title>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/white.css">
+</head>
+<body>
+
+<div class="reveal">
+  <div class="slides">
+    <section data-markdown>
+      <script type="text/template">
+        # Titre en Markdown
+
+        - Point 1
+        - Point 2
+        - **Gras**, *italique*, `code`
+
+        ---
+        ## Slide suivante
+        Ceci est une autre slide
+      </script>
+    </section>
+  </div>
+</div>
+
+<script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
+<script src="https://unpkg.com/reveal.js/plugin/markdown/markdown.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    plugins: [ RevealMarkdown ]
+  });
+</script>
+
+</body>
+</html>
 
