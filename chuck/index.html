@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Objectif 1000 Pédaleurs du quotidien</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.2/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.2/dist/theme/white.css" id="theme">
+  <style>
+    .reveal .slides {
+      background-image: url('Galaxie-TFTP-velo.png');
+      background-repeat: repeat;
+      background-size: 100px 100px;
+    }
+
+    .slide1 {
+      padding-top: 50px;
+      text-align: center;
+    }
+
+    .slide1 img {
+      width: 100%;
+      height: auto;
+      margin: 20px 0;
+    }
+
+    .content-box {
+      background-color: rgba(0, 0, 0, 0.85);
+      color: white;
+      margin: 10px auto;
+      padding: 20px;
+      width: 90%;
+      border-radius: 10px;
+      max-width: 800px;
+    }
+
+    .copy-button {
+      padding: 10px 20px;
+      background-color: #0088cc;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .notification {
+      margin-top: 10px;
+      color: lightgreen;
+      font-weight: bold;
+      display: none;
+    }
+
+    textarea.hidden-text {
+      position: absolute;
+      left: -9999px;
+      height: 0;
+      width: 0;
+      overflow: hidden;
+    }
+
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      background-color: black;
+    }
+
+    .video-container video {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+<div class="reveal">
+  <div class="slides">
+
+    <!-- Slide 1 -->
+    <section class="slide1">
+      <div class="content-box">
+        <h2>Objectif 1000 Pédaleurs du quotidien grâce à Chuck Norris</h2>
+      </div>
+      <div class="content-box">
+        <p>1 - Appuies longtemps sur l'image👇 et choisis l'option pour l'enregistrer dans ton album/galerie/photos</p>
+      </div>
+      <img src="Image-Facebook.jpeg" alt="Image à partager">
+
+      <div class="content-box">
+        <button class="copy-button" onclick="copyText()">2 - Copies le texte en appuyant ici</button>
+        <div class="notification" id="notification">Texte copié dans le presse-papier ✅</div>
+      </div>
+
+      <textarea id="texte-facebook" class="hidden-text">
+"On peut tuer avec le vélo; en bousculant une personne âgée qui sort de sa résidence"
+
+
+        
+C’est ce qu’on entend parfois dans les débats sur le partage de la route. Alors oui, Chuck Norris a braqué une bijouterie avec un vélo cargo. Mais à part lui ?
+
+🔹 Pas d’attentat à la bicyclette.
+
+🔹 Pas de foule écrasée volontairement par un cycliste terroriste
+
+🔹 Pas de braquage au biclou-bélier… sauf sur cette une de journal un peu spéciale.
+
+👉 Le vélo n’est pas parfait, mais il n’est pas la menace qu’on fantasme parfois.
+
+Le vrai sujet, c’est comment on partage intelligemment l’espace public, en sécurité pour tous. Cyclistes, piétons, automobilistes qui ont la nécessité de prendre un véhicule motorisé: on a tous à y gagner.
+
+D'ailleurs, il reste 5 jours pour s'exprimer et aider les villes à améliorer les aménagements cyclables grâce au baromètre vélo: https://www.barometre-velo.fr 
+
+Par ailleurs, atteignons les 100.000 km à vélo tous ensemble en rejoignant la communauté de Team For The Planet - Galaxie de l’Action sur l’app Geovelo.
+1⃣ Téléchargez l'application Geovelo et créez un compte gratuitement.
+2⃣ Rejoignez-y la communauté Team for the Planet ou via ce lien : https://geovelo.app/communities/invites/EEUEWQB
+3⃣ Enfourchez votre vélo et lancez l'application en début et fin de course (possibilité de passer en "mode automatique").
+
+Merci à "mai à vélo" de nous inspirer 💙  
+      </textarea>
+
+      <div class="content-box">
+        <p>3 - Prêt ? Partages sur <a href="https://wa.me/" target="_blank">WhatsApp</a> ou ton <a href="fb://facewebmodal/" target="_blank">linkedin</a></p>
+      </div>
+      <div class="content-box">
+        <p>Une vidéo explicative dans la slide suivante</p>
+      </div>
+    </section>
+
+    <!-- Slide 2 -->
+    <section>
+      <div class="video-container">
+        <video autoplay loop controls playsinline>
+          <source src="velo-tuto-fb.mp4" type="video/mp4">
+          Votre navigateur ne supporte pas la vidéo HTML5.
+        </video>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.2/dist/reveal.min.js"></script>
+<script>
+  Reveal.initialize({
+    controls: true,
+    progress: false,
+    center: true,
+    hash: true
+  });
+
+  function copyText() {
+    const text = document.getElementById("texte-facebook").value;
+    navigator.clipboard.writeText(text).then(() => {
+      document.getElementById("notification").style.display = "block";
+    });
+  }
+</script>
+
+</body>
+</html>
